@@ -4,11 +4,11 @@ import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import TypewriterComponent from "typewriter-effect"
 import { Button } from "./ui/button";
-import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Testimonials from "./Testimonials";
 import Image from "next/image";
 
+import { Montserrat } from "next/font/google";
 const font = Montserrat({
     weight: "600",
     subsets: ["latin"]
