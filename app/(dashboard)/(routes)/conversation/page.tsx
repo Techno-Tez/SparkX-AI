@@ -59,7 +59,8 @@ const ConversationPage = () => {
                 progress: undefined,
                 theme: "light",
                 });
-
+            console.log(error);
+            
         } finally {
             router.refresh()
         }
