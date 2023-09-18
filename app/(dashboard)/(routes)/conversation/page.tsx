@@ -13,7 +13,7 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { ChatCompletionMessageParam } from "openai/resources/chat/index.mjs";
+import { ChatCompletionRequestMessage } from "openai";
 import { Empty } from "@/components/Empty";
 import Loader from "@/components/loader";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ import BotAvatar from "@/components/bot-avatar";
 import { toast } from "react-toastify";
 
 const ConversationPage = () => {
-    const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
+    const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
     const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -36,7 +36,7 @@ const ConversationPage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            const userMessage: ChatCompletionMessageParam = {
+            const userMessage: ChatCompletionRequestMessage = {
                 role: "user",
                 content: values.prompt
             }

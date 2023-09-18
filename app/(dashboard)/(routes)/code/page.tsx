@@ -7,7 +7,7 @@ import { Code } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod"
 import axios from "axios"
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { ChatCompletionMessageParam } from "openai/resources/chat/index.mjs";
+import { ChatCompletionRequestMessage } from "openai";
 import ReactMarkdown from 'react-markdown'
 import { formSchema } from "./constants";
 
@@ -24,7 +24,7 @@ import BotAvatar from "@/components/bot-avatar";
 import {toast} from "react-toastify"
 
 const CodePage = () => {
-    const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
+    const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
     const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -38,7 +38,7 @@ const CodePage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            const userMessage: ChatCompletionMessageParam = {
+            const userMessage: ChatCompletionRequestMessage = {
                 role: "user",
                 content: values.prompt
             }
@@ -112,7 +112,7 @@ const CodePage = () => {
                     <div className="flex flex-col-reverse gap-y-4">
                         {messages.map((message, idx) => {
                             return (
-                                <div key={message.idx} className={cn("p-8 w-full flex items-start gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>
+                                <div key={idx} className={cn("p-8 w-full flex items-start gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>
                                     {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
                                     <p className="text-sm ">
                                         <ReactMarkdown components={{
