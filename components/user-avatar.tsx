@@ -7,11 +7,7 @@ export const UserAvatar = () => {
     return (
         <div className="h-8 w-8">
             <Avatar>
-                <AvatarImage src={user?.image_url} />
-                <AvatarFallback>
-                    {user?.firstName.charAt(0)}
-                    {user?.lastName.charAt(0)}
-                </AvatarFallback>
+                <AvatarImage src={user?.imageUrl} />
             </Avatar>
         </div>
     );
