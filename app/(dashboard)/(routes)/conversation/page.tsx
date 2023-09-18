@@ -21,7 +21,7 @@ import {UserAvatar} from "@/components/user-avatar";
 import BotAvatar from "@/components/bot-avatar";
 import { toast } from "react-toastify";
 
-const conversationPage = () => {
+const ConversationPage = () => {
     const [messages, setMessages] = useState<ChatCompletionMessageParam[]>([])
     const router = useRouter();
 
@@ -126,4 +126,4 @@ const conversationPage = () => {
     );
 }
 
-export default conversationPage;
+export default ConversationPage;
