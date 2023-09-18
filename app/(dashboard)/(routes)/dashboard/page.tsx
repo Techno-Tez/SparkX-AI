@@ -44,7 +44,7 @@ const tools = [
 
 const page = () => {
   return (
-    <div className="h-max mb-12">
+    <div className="h-max mt-8 mb-16 md:my-0">
       <div className="mb-8 space-y-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center">
           Explore the Power of AI

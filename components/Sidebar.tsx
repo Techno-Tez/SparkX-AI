@@ -7,6 +7,7 @@ import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, Video
 import { cn } from "@/lib/utils"
 import {usePathname} from 'next/navigation'
 
+
 const montserrat = Montserrat({
     weight: "600",
     subsets: ["latin"]
@@ -72,7 +73,7 @@ const Sidebar = () => {
                     </div>
                     <h1 className={cn("text-2xl font-bold", montserrat.className)}>SparkX AI</h1>
                 </Link>
-                <div className="space-y-1">
+                <div className={cn("space-y-1", montserrat.className)}>
                     {routes.map((route)=> {
                         return (
                         <Link
