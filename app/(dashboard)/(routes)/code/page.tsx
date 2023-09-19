@@ -112,17 +112,17 @@ const CodePage = () => {
                     <div className="flex flex-col-reverse gap-y-4">
                         {messages.map((message, idx) => {
                             return (
-                                <div key={idx} className={cn("p-8 w-full flex items-start gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>
+                                <div key={idx} className={cn("p-2 md:p-8 w-full flex items-start gap-x-2 md:gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>
                                     {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                                    <p className="text-sm ">
+                                    <p className="text-sm px-1 w-[90%] overflow-auto">
                                         <ReactMarkdown components={{
                                             pre: ({ node, ...props }) => (
-                                                <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                                                <div className="rounded-lg w-full overflow-auto bg-black/10 my-2 md:px-2">
                                                     <pre {...props} />
                                                 </div>
                                             ),
                                             code: ({ node, ...props }) => (
-                                                <code className="bg-black/10 rounded-lg p-1" {...props} />
+                                                <code className="bg-black/10 rounded-lg px-1 w-full overflow-auto" {...props} />
                                             )
                                         }} className="text-sm overflow-hidden leading-7">
                                             {message.content || ""}

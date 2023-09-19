@@ -14,16 +14,16 @@ const MobileSidebar = () => {
         setIsMounted(true)
     }, [])
 
-    
+
     if (!isMounted) {
         return null
     }
     return (
         <Sheet>
             <SheetTrigger>
-                
+                <div className="md:hidden">
                     <Menu />
-                
+                </div>
             </SheetTrigger>
             <SheetContent side="left" className="p-0">
                 <Sidebar />

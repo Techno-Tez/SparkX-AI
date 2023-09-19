@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar"
 import Sidebar from "@/components/Sidebar"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import Loading from "./loading";
+import { Suspense } from "react";
 
 const DashboardLayout = ({
   children
@@ -15,6 +17,7 @@ const DashboardLayout = ({
       </div>
       <main className="md:pl-72">
         <Navbar />
+        <Suspense fallback={<Loading />} >
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -28,6 +31,7 @@ const DashboardLayout = ({
           theme="light"
         />
         {children}
+        </Suspense>
       </main>
     </div>
   )

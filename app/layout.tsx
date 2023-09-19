@@ -20,6 +20,7 @@ export default function RootLayout({
       <html lang="en">
         <CrispProvider />
         <body className={inter.className}>
+
           {children}
           {/* <Footer /> */}
         </body>
