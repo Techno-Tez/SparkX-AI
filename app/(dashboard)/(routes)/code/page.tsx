@@ -109,7 +109,7 @@ const CodePage = () => {
                     {messages.length === 0 && !isLoading && (
                         <Empty label="No conversation has been started" />
                     )}
-                    <div className="flex flex-col-reverse gap-y-4">
+                    <div className="flex flex-col-reverse gap-y-4 mb-8">
                         {messages.map((message, idx) => {
                             return (
                                 <div key={idx} className={cn("p-2 md:p-8 w-full flex items-start gap-x-2 md:gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}>

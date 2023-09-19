@@ -73,7 +73,7 @@ const ImagePage = () => {
                 iconColor="text-pink-700"
                 bgColor="bg-pink-700/10"
             />
-            <div className="px-4 lg:px-8">
+            <div className="px-4 lg:px-8 mb-8">
                 <div>
                     <Form {...form}>
                         <form

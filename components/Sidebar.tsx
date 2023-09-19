@@ -50,11 +50,7 @@ const routes = [
       color: "text-green-700",
       href: '/code',
     },
-    {
-      label: 'Settings',
-      icon: Settings,
-      href: '/settings',
-    },
+    
   ];
 
 const Sidebar = () => {
